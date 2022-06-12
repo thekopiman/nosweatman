@@ -12,8 +12,8 @@ import DetailsScreen from '../screens/DetailsScreen';
 
 // Screen names
 const homeName = 'Home';
-const detailsName = 'Details';
-const settingsName = 'Settings';
+const detailsName = 'Leaderboards';
+const settingsName = 'History';
 
 const Tab = createBottomTabNavigator();
 
@@ -31,9 +31,9 @@ export default function MainContainer(){
                         if(rn == homeName) {
                             iconName = focused ? 'home' : 'home-outline';
                         } else if (rn == detailsName) {
-                            iconName = focused ? 'list' : 'list-outline';
+                            iconName = focused ? 'trophy' : 'trophy-outline';
                         } else if (rn == settingsName) {
-                            iconName = focused ? 'settings' : 'settings-outline';
+                            iconName = focused ? 'time' : 'time-outline';
                         }
                         return <Ionicons name={iconName} size={size} color={color}/>
                     },
