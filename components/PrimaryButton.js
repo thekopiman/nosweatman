@@ -20,10 +20,7 @@ function PrimaryButton({ textline, iconlink }) {
       >
         <View style={styles.componentView}>
           <View style={styles.imageView}>
-            <Image
-                style={styles.image}
-                source={iconlink}
-            />
+            <Image style={styles.image} source={iconlink} />
           </View>
           <View style={styles.textView}>
             <Text style={styles.buttonText}>{textline}</Text>
@@ -56,7 +53,7 @@ const styles = StyleSheet.create({
   buttonText: {
     textAlign: "center",
     fontSize: 35,
-    fontWeight: "bold"
+    fontWeight: "bold",
   },
   // Dedicated style for ios
   pressed: {
@@ -64,24 +61,24 @@ const styles = StyleSheet.create({
   },
   componentView: {
     flexDirection: "row",
-    flex: 1
+    flex: 1,
   },
   imageView: {
     flex: 0.25,
     resizeMode: "contain",
     justifyContent: "center",
     alignItems: "flex-start",
-    padding: 10
+    padding: 10,
   },
   image: {
     resizeMode: "contain",
     width: "100%",
-    height: "100%"
+    height: "100%",
   },
   textView: {
     flex: 1,
-    alignItems: 'center',
+    alignItems: "center",
     justifyContent: "flex-start",
-    flexDirection: "row"
-  }
+    flexDirection: "row",
+  },
 });
