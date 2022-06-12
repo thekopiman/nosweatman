@@ -1,2 +1,7 @@
 # nosweatman
-AI Driven Exercise Counter/Tracker
+
+Health and IPPT related stuff for NS men.
+
+Login:
+Username: admin
+Password: admin
