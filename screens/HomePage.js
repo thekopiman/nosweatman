@@ -11,16 +11,28 @@ function HomePage() {
         <Text style={styles.header}>Admin!</Text>
       </View>
       <View style={styles.mainButtonContainer}>
-        <PrimaryButton>Start IPPT</PrimaryButton>
+        <PrimaryButton
+          textline="IPPT Trainer"
+          iconlink={require("../assets/running.png")}
+        />
       </View>
       <View style={styles.subButtonContainer}>
-        <PrimaryButton>Push up</PrimaryButton>
+        <PrimaryButton
+          textline="Upload scores"
+          iconlink={require("../assets/running.png")} // Change the file location later
+        />
       </View>
       <View style={styles.subButtonContainer}>
-        <PrimaryButton>Sit up</PrimaryButton>
+        <PrimaryButton
+          textline="Book IPPT"
+          iconlink={require("../assets/running.png")} // Change the file location later
+        />
       </View>
       <View style={styles.subButtonContainer}>
-        <PrimaryButton>2.4km run</PrimaryButton>
+        <PrimaryButton
+          textline="Health Checkup"
+          iconlink={require("../assets/running.png")} // Change the file location later
+        />
       </View>
       <View style={styles.subButtonContainer}></View>
     </View>
