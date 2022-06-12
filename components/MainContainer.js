@@ -7,13 +7,13 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 
 //Screens
 import HomePage from "../screens/HomePage";
-import SettingsScreen from "../screens/SettingsScreen";
-import DetailsScreen from "../screens/DetailsScreen";
+import HistoryScreen from "../screens/HistoryScreen";
+import LeaderboardScreen from "../screens/LeaderboardScreen";
 
 // Screen names
 const homeName = "Home";
-const detailsName = "Details";
-const settingsName = "Settings";
+const leaderboardName = "Leaderboard";
+const historyName = "History";
 
 const Tab = createBottomTabNavigator();
 
@@ -22,16 +22,16 @@ export default function MainContainer() {
     <Tab.Navigator
       initalRouteName={homeName}
       screenOptions={({ route }) => ({
-        tabBarIcon: ({ focused, color, size }) => {
+        tabBarIcon: ({ color, size }) => {
           let iconName;
           let rn = route.name;
 
           if (rn == homeName) {
-            iconName = focused ? "home" : "home-outline";
-          } else if (rn == detailsName) {
-            iconName = focused ? "list" : "list-outline";
-          } else if (rn == settingsName) {
-            iconName = focused ? "settings" : "settings-outline";
+            iconName = "home-outline";
+          } else if (rn == leaderboardName) {
+            iconName = "trophy-outline";
+          } else if (rn == historyName) {
+            iconName = "time-outline";
           }
           return <Ionicons name={iconName} size={size} color={color} />;
         },
@@ -44,8 +44,8 @@ export default function MainContainer() {
       })}
     >
       <Tab.Screen name={homeName} component={HomePage} />
-      <Tab.Screen name={detailsName} component={DetailsScreen} />
-      <Tab.Screen name={settingsName} component={SettingsScreen} />
+      <Tab.Screen name={leaderboardName} component={LeaderboardScreen} />
+      <Tab.Screen name={historyName} component={HistoryScreen} />
     </Tab.Navigator>
   );
 }

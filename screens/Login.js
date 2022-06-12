@@ -15,7 +15,10 @@ function LoginScreen({ navigation }) {
   }
 
   function pressHandler() {
-    if (text === "admin" && textpw === "admin") {
+    if (
+      text.replace(/ /g, "").toLowerCase() === "admin" &&
+      textpw.replace(/ /g, "").toLowerCase() === "admin"
+    ) {
       navigation.navigate("Home Page");
     }
   }
