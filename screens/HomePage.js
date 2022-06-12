@@ -51,8 +51,6 @@ const styles = StyleSheet.create({
     paddingVertical: 40,
     paddingHorizontal: 20,
     flex: 0.3,
-    borderColor: "#cccccc",
-    borderWidth: 1,
     justifyContent: "center",
   },
   header: {
@@ -61,14 +59,10 @@ const styles = StyleSheet.create({
   },
   mainButtonContainer: {
     flex: 1,
-    borderColor: "#cccccc",
-    borderWidth: 1,
     padding: 15,
   },
   subButtonContainer: {
     flex: 0.6,
-    borderColor: "#cccccc",
-    borderWidth: 1,
     paddingHorizontal: 15,
     paddingVertical: 5,
   },
