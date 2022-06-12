@@ -56,9 +56,7 @@ const styles = StyleSheet.create({
   buttonText: {
     textAlign: "center",
     fontSize: 35,
-    fontWeight: "bold",
-    borderWidth: 1,
-    borderColor: "black"
+    fontWeight: "bold"
   },
   // Dedicated style for ios
   pressed: {
@@ -71,8 +69,6 @@ const styles = StyleSheet.create({
   imageView: {
     flex: 0.25,
     resizeMode: "contain",
-    borderWidth: 1,
-    borderColor: "black",
     justifyContent: "center",
     alignItems: "flex-start",
     padding: 10
@@ -86,8 +82,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: "flex-start",
-    flexDirection: "row",
-    borderWidth: 1,
-    borderColor: "black"
+    flexDirection: "row"
   }
 });
