@@ -50,59 +50,60 @@ function TrainerSitUp({ navigation }) {
           Timer:
         </Text>
       </View>
-      <View style={styles.timerWrapper}>
-        <View style={styles.timerContainer}>
-          <CountdownCircleTimer
-            key={key}
-            isPlaying={isPlaying}
-            duration={60}
-            colors={["#004777", "#F7B801", "#A30000", "#A30000"]}
-            // colorsTime={[10, 5, 3, 0]}
-            colorsTime={[45, 30, 15, 0]}
-            onComplete={() => {
-              playSound("stop");
-              return { shouldRepeat: false };
-            }}
-          >
-            {({ remainingTime, color }) => (
-              <Text style={{ color, fontSize: 40 }}>{remainingTime}</Text>
-            )}
-          </CountdownCircleTimer>
-        </View>
-        <View style={styles.timerEndEarly}>
-          <SecondaryButton
-            textline={isPlaying ? "Pause" : "Start"}
-            pressHandler={() => {
-              if (!isPlaying) {
-                playSound("start");
-                setTimeout(() => {
+      <View style={styles.mainCompContainer}>
+        <View style={styles.timerWrapper}>
+          <View style={styles.timerContainer}>
+            <CountdownCircleTimer
+              key={key}
+              isPlaying={isPlaying}
+              duration={60}
+              colors={["#004777", "#F7B801", "#A30000", "#A30000"]}
+              // colorsTime={[10, 5, 3, 0]}
+              colorsTime={[45, 30, 15, 0]}
+              onComplete={() => {
+                playSound("stop");
+                return { shouldRepeat: false };
+              }}
+            >
+              {({ remainingTime, color }) => (
+                <Text style={{ color, fontSize: 40 }}>{remainingTime}</Text>
+              )}
+            </CountdownCircleTimer>
+          </View>
+          <View style={styles.timerEndEarly}>
+            <SecondaryButton
+              textline={isPlaying ? "Pause" : "Start"}
+              pressHandler={() => {
+                if (!isPlaying) {
+                  playSound("start");
+                  setTimeout(() => {
+                    setIsPlaying((prev) => !prev);
+                  }, 2200);
+                } else {
                   setIsPlaying((prev) => !prev);
-                }, 2200);
-              } else {
-                setIsPlaying((prev) => !prev);
-              }
-            }}
-          />
-        </View>
-        <View style={styles.timerEndEarly}>
-          <SecondaryButton
-            textline={"Reset"}
-            pressHandler={() => {
-              setKey((prev) => !prev);
-              setIsPlaying(false);
-            }}
-          />
-        </View>
-        <View style={styles.timerEndEarly}>
-          <SecondaryButton
-            textline={"Upload Sit Up"}
-            pressHandler={() => {
-              navigation.navigate("UploadSitUp");
-            }}
-          />
+                }
+              }}
+            />
+          </View>
+          <View style={styles.timerEndEarly}>
+            <SecondaryButton
+              textline={"Reset"}
+              pressHandler={() => {
+                setKey((prev) => !prev);
+                setIsPlaying(false);
+              }}
+            />
+          </View>
+          <View style={styles.timerEndEarly}>
+            <SecondaryButton
+              textline={"Upload Sit Up"}
+              pressHandler={() => {
+                navigation.navigate("UploadSitUp");
+              }}
+            />
+          </View>
         </View>
       </View>
-      <View style={styles.emptySpace}></View>
     </View>
   );
 }
@@ -111,51 +112,62 @@ export default TrainerSitUp;
 
 const styles = StyleSheet.create({
   mainContainer: {
-    flex: 1,
-    alignItems: "center",
-    // justifyContent: "center",
     backgroundColor: "#F8FFF5",
+    flex: 1,
   },
   headerContainer: {
-    marginTop: "20%",
-    // paddingTop: 40,
+    marginTop: 60,
+    paddingVertical: 40,
     paddingHorizontal: 20,
-    flex: 0.7,
-    // justifyContent: "center",
+    flex: 0.3,
+    justifyContent: "center",
+    alignItems: "flex-start"
   },
   header: {
     fontSize: 40,
-    fontWeight: "bold",
+    fontWeight: "bold"
   },
   instructionsContainer: {
-    flex: 1,
-    alignItems: "flex-start",
-    width: "80%",
+    flex: 0.5,
+    width: "100%",
+    // bordorColor: "black",
+    // borderWidth: 1,
+    paddingHorizontal: "6%"
   },
   timerWrapper: {
     flex: 2,
     width: "100%",
     alignItems: "center",
+    // bordorColor: "black",
+    // borderWidth: 1
   },
   timerContainer: {
     flex: 5,
     width: "80%",
-    // backgroundColor: "#FF9393",
-    borderRadius: 20,
-    margin: "5%",
+    borderRadius: 28,
+    marginBottom: "5%",
     alignItems: "center",
+    // bordorColor: "black",
+    // borderWidth: 1,
+    justifyContent: "center"
   },
   timerEndEarly: {
     flex: 1,
-    width: "40%",
+    width: "50%",
     // backgroundColor: "#79FF63",
     // borderRadius: 20,
     // height: 30,
-    margin: "0%",
     alignItems: "center",
     justifyContent: "center",
+    // bordorColor: "black",
+    // borderWidth: 1
   },
   emptySpace: {
     flex: 0.2,
   },
+  mainCompContainer: {
+    flex: 2.2,
+    paddingBottom: "5%",
+    alignItems: "center"
+  }
 });

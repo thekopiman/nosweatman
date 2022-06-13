@@ -43,43 +43,55 @@ export default function BookIPPT() {
       <View style={styles.headingContainer}>
         <Text style={styles.header}>IPPT Booking</Text>
       </View>
-      <Pressable onPress={startBookIpptHandler}>
-        <View style={styles.buttonContainer}>
-          <Text style={styles.buttonText}>Book IPPT</Text>
-          <View style={styles.imageContainer}>
-            <Image
-              style={styles.buttonImg}
-              source={require("../assets/situp.png")}
-            />
+      <View style={styles.mainCompContainer}>
+        <Pressable 
+          onPress={startBookIpptHandler}
+          style={({ pressed }) =>
+            pressed
+              ? [styles.pressed, styles.buttonInnerContainer]
+              : styles.buttonInnerContainer
+          }
+          android_ripple={{ color: "#ffada9" }}
+        >
+          <View style={styles.buttonContainer}>
+            <Text style={styles.buttonText}>Book IPPT</Text>
+            <View style={styles.imageContainer}>
+              <Image
+                style={styles.buttonImg}
+                source={require("../assets/situp.png")}
+              />
+            </View>
+          </View>
+        </Pressable>
+        <BookIppt
+          visible={modalIsVisible}
+          onCancel={cancelBookIpptHandler}
+          onBookIppt={bookIpptHandler}
+        />
+        <View
+          style={[
+            styles.listItemContainer,
+            { flex: 0, backgroundColor: "#78B752" },
+          ]}
+        >
+          <View style={styles.listItem}>
+            <Text>Location</Text>
+          </View>
+          <View style={styles.listItem}>
+            <Text>Date</Text>
+          </View>
+          <View style={styles.listItem}>
+            <Text>Time</Text>
           </View>
         </View>
-      </Pressable>
-      <BookIppt
-        visible={modalIsVisible}
-        onCancel={cancelBookIpptHandler}
-        onBookIppt={bookIpptHandler}
-      />
-      <View
-        style={[
-          styles.listItemContainer,
-          { flex: 0, backgroundColor: "#78B752" },
-        ]}
-      >
-        <View style={styles.listItem}>
-          <Text>Location</Text>
-        </View>
-        <View style={styles.listItem}>
-          <Text>Date</Text>
-        </View>
-        <View style={styles.listItem}>
-          <Text>Time</Text>
-        </View>
+        <FlatList
+          data={bookings}
+          keyExtractor={(item) => item.id}
+          renderItem={renderListItem}
+        />
       </View>
-      <FlatList
-        data={bookings}
-        keyExtractor={(item) => item.id}
-        renderItem={renderListItem}
-      />
+      
+      
     </View>
   );
 }
@@ -87,17 +99,27 @@ export default function BookIPPT() {
 const styles = StyleSheet.create({
   appContainer: {
     flex: 1,
-    paddingTop: 50,
-    paddingHorizontal: 16,
-    backgroundColor: "#F8FFF5",
+    backgroundColor: "#F8FFF5"
   },
   headingContainer: {
-    paddingVertical: 20,
-    marginBottom: 20,
+    marginTop: 60,
+    paddingVertical: 40,
+    paddingHorizontal: 20,
+    flex: 0.3,
+    justifyContent: "center",
+    alignItems: "flex-start"
   },
   header: {
     fontSize: 40,
-    fontWeight: "800",
+    fontWeight: "bold",
+  },
+  // Dedicated style for ios
+  pressed: {
+    opacity: 0.75,
+  },
+  mainCompContainer: {
+    flex: 2.8,
+    paddingHorizontal: 15,
   },
   bookingContainer: {
     marginTop: 20,
@@ -107,14 +129,14 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     backgroundColor: "#A9FF74",
     height: 100,
-    borderRadius: 10,
+    borderRadius: 28,
     alignItems: "center",
     justifyContent: "space-between",
   },
   buttonText: {
     fontSize: 24,
     fontWeight: "800",
-    paddingLeft: 20,
+    paddingLeft: 20
   },
   buttonImg: {
     width: 60,
@@ -127,24 +149,23 @@ const styles = StyleSheet.create({
     marginRight: 20,
     justifyContent: "center",
     alignItems: "center",
-    borderRadius: 6,
+    borderRadius: 15,
+    width: 80,
+    height: 80
   },
   listItemContainer: {
     flex: 1,
     flexDirection: "row",
     backgroundColor: "#DFFFCC",
-    borderRadius: 10,
+    borderRadius: 15,
     marginVertical: 5,
-    // width: 300,
     justifyContent: "center",
     alignItems: "center",
-    alignContent: "center",
+    alignContent: "center"
   },
   listItem: {
     flex: 1,
     padding: 10,
-    // borderWidth: 1,
-    // borderColor: "red",
-    alignItems: "center",
-  },
+    alignItems: "center"
+  }
 });

@@ -7,33 +7,36 @@ function UploadPushUp() {
   return (
     <View style={styles.mainContainer}>
       <View style={styles.headerContainer}>
-        <Text style={styles.header}>Upload your push ups score</Text>
+        <Text style={styles.header}>Upload your push</Text>
+        <Text style={styles.header}>ups score</Text>
       </View>
-      <View style={styles.instructionsContainer}>
-        <Text style={{ flex: 0, fontSize: 20, fontWeight: "bold" }}>
-          Push ups in a minute
-        </Text>
-      </View>
-      <View style={styles.ContainerTextWrapper}>
-        <View style={{ flex: 1 }}>
-          <Text>Repititions:</Text>
+      <View style={styles.mainCompContainer}>
+        <View style={styles.instructionsContainer}>
+          <Text style={{ flex: 0, fontSize: 20, fontWeight: "bold" }}>
+            Push ups in a minute
+          </Text>
         </View>
-        <View style={styles.containertext}>
-          <TextInput
-            style={styles.input}
-            keyboardType="numeric"
-            onChangeText={setText}
-            value={text}
-          />
+        <View style={styles.ContainerTextWrapper}>
+          <View style={{ flex: 1 }}>
+            <Text>Repititions:</Text>
+          </View>
+          <View style={styles.containertext}>
+            <TextInput
+              style={styles.input}
+              keyboardType="numeric"
+              onChangeText={setText}
+              value={text}
+            />
+          </View>
         </View>
+        <LoginButton
+          onPress={() => {
+            setText("");
+            //   text = "";
+          }}
+          text={"Submit"}
+        />
       </View>
-      <LoginButton
-        onPress={() => {
-          setText("");
-          //   text = "";
-        }}
-        text={"Submit"}
-      />
     </View>
   );
 }
@@ -41,27 +44,30 @@ export default UploadPushUp;
 
 const styles = StyleSheet.create({
   mainContainer: {
-    flex: 1,
-    alignItems: "center",
-    // justifyContent: "center",
     backgroundColor: "#F8FFF5",
+    flex: 1,
   },
   headerContainer: {
-    marginTop: "30%",
-    // paddingTop: 40,
+    marginTop: 60,
+    paddingVertical: 40,
     paddingHorizontal: 20,
-    flex: 0,
-    // justifyContent: "center",
+    flex: 0.3,
+    justifyContent: "center",
+    alignItems: "flex-start"
   },
   header: {
     fontSize: 40,
-    fontWeight: "bold",
+    fontWeight: "bold"
   },
   instructionsContainer: {
     flex: 0,
     alignItems: "flex-start",
-    width: "80%",
+    width: "100%",
     marginTop: "10%",
+    marginBottom: "5%",
+    // bordorColor: "black",
+    // borderWidth: 1,
+    paddingHorizontal: "6%"
   },
   ContainerTextWrapper: {
     flex: 0,
@@ -70,21 +76,31 @@ const styles = StyleSheet.create({
     alignContent: "center",
     justifyContent: "center",
     alignItems: "center",
-    marginTop: "10%",
+    // bordorColor: "black",
+    // borderWidth: 1,
   },
   containertext: {
     flex: 0,
     paddingVertical: 20,
+    // bordorColor: "black",
+    // borderWidth: 1,
   },
   input: {
     flex: 0,
     fontSize: 16,
-    backgroundColor: "#97FF95",
     borderRadius: 20,
     paddingVertical: 10,
     paddingHorizontal: 10,
     width: 100,
     fontSize: 16,
     textAlign: "center",
+    backgroundColor: "#97FF95",
   },
+  mainCompContainer: {
+    flex: 2.2,
+    paddingBottom: "5%",
+    alignItems: "center",
+    // bordorColor: "black",
+    // borderWidth: 1,
+  }
 });

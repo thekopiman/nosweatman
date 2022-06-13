@@ -12,40 +12,41 @@ function HomePage({ navigation }) {
   // }
   return (
     <View style={styles.overallContainer}>
-      <View style={styles.headerContainer}>
-        <Text style={styles.header}>Welcome back,</Text>
-        {/* Username goes here */}
-        <Text style={styles.header}>Admin!</Text>
+        <View style={styles.headerContainer}>
+          <Text style={styles.header}>Welcome back,</Text>
+          {/* Username goes here */}
+          <Text style={styles.header}>Admin!</Text>
       </View>
-      <View style={styles.mainButtonContainer}>
-        <PrimaryButton
-          textline="IPPT Trainer"
-          iconlink={require("../assets/running.png")}
-          pressHandler={() => navigation.navigate("IPPT Trainer")}
-        />
+      <View style={styles.mainCompContainer}>
+        <View style={styles.mainButtonContainer}>
+          <PrimaryButton
+            textline="IPPT Trainer"
+            iconlink={require("../assets/running.png")}
+            pressHandler={() => navigation.navigate("IPPT Trainer")}
+          />
+        </View>
+        <View style={styles.subButtonContainer}>
+          <PrimaryButton
+            textline="Upload scores"
+            iconlink={require("../assets/uploadscores.png")} // Change the file location later
+            pressHandler={() => navigation.navigate("UploadScores")}
+          />
+        </View>
+        <View style={styles.subButtonContainer}>
+          <PrimaryButton
+            textline="Book IPPT"
+            iconlink={require("../assets/situp.png")} // Change the file location later
+            pressHandler={() => navigation.navigate("BookIPPT")}
+          />
+        </View>
+        <View style={styles.subButtonContainer}>
+          <PrimaryButton
+            textline="Health Checkup"
+            iconlink={require("../assets/healthcheckup.png")} // Change the file location later
+            pressHandler={() => navigation.navigate("HealthCheckUp")}
+          />
+        </View>
       </View>
-      <View style={styles.subButtonContainer}>
-        <PrimaryButton
-          textline="Upload scores"
-          iconlink={require("../assets/uploadscores.png")} // Change the file location later
-          pressHandler={() => navigation.navigate("UploadScores")}
-        />
-      </View>
-      <View style={styles.subButtonContainer}>
-        <PrimaryButton
-          textline="Book IPPT"
-          iconlink={require("../assets/situp.png")} // Change the file location later
-          pressHandler={() => navigation.navigate("BookIPPT")}
-        />
-      </View>
-      <View style={styles.subButtonContainer}>
-        <PrimaryButton
-          textline="Health Checkup"
-          iconlink={require("../assets/healthcheckup.png")} // Change the file location later
-          pressHandler={() => navigation.navigate("HealthCheckUp")}
-        />
-      </View>
-      <View style={styles.subButtonContainer}></View>
     </View>
   );
 }
@@ -70,14 +71,17 @@ const styles = StyleSheet.create({
   },
   mainButtonContainer: {
     flex: 1,
-    padding: 15,
+    paddingHorizontal: 15,
+    paddingVertical: 5,
+
   },
   subButtonContainer: {
     flex: 0.6,
     paddingHorizontal: 15,
     paddingVertical: 5,
   },
-  button: {
-    flex: 1,
-  },
+  mainCompContainer: {
+    flex: 2.8,
+    paddingBottom: "5%"
+  }
 });

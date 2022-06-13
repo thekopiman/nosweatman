@@ -55,59 +55,59 @@ function TrainerRun({ navigation }) {
           Stopwatch:
         </Text>
       </View>
-      <View style={styles.numbersWrapper}>
-        <View style={styles.numbers}>
-          <Text style={{ flex: 1, fontSize: 20, fontWeight: "bold" }}>
-            {("0" + Math.floor((time / 60000) % 60)).slice(-2)}
-          </Text>
+      <View style={styles.mainCompContainer}>
+        <View style={styles.numbersWrapper}>
+          <View style={styles.numbers}>
+            <Text style={{ flex: 1, fontSize: 20, fontWeight: "bold" }}>
+              {("0" + Math.floor((time / 60000) % 60)).slice(-2)}
+            </Text>
+          </View>
+          <View style={styles.numbers}>
+            <Text style={{ flex: 1, fontSize: 20, fontWeight: "bold" }}>
+              {("0" + Math.floor((time / 1000) % 60)).slice(-2)}
+            </Text>
+          </View>
+          <View style={styles.numbers}>
+            <Text style={{ flex: 1, fontSize: 20, fontWeight: "bold" }}>
+              {("0" + Math.floor((time / 10) % 100)).slice(-2)}
+            </Text>
+          </View>
         </View>
-        <View style={styles.numbers}>
-          <Text style={{ flex: 1, fontSize: 20, fontWeight: "bold" }}>
-            {("0" + Math.floor((time / 1000) % 60)).slice(-2)}
-          </Text>
-        </View>
-        <View style={styles.numbers}>
-          <Text style={{ flex: 1, fontSize: 20, fontWeight: "bold" }}>
-            {("0" + Math.floor((time / 10) % 100)).slice(-2)}
-          </Text>
-        </View>
-      </View>
-      <View style={styles.buttonWrapper}>
-        <View style={styles.button}>
-          <SecondaryButton
-            textline={!running ? "Start" : "Stop"}
-            pressHandler={() => {
-              if (!running) {
-                playSound();
-                setTimeout(() => {
+        <View style={styles.buttonWrapper}>
+          <View style={styles.button}>
+            <SecondaryButton
+              textline={!running ? "Start" : "Stop"}
+              pressHandler={() => {
+                if (!running) {
+                  playSound();
+                  setTimeout(() => {
+                    setRunning((prev) => !prev);
+                  }, 2200);
+                } else {
                   setRunning((prev) => !prev);
-                }, 2200);
-              } else {
-                setRunning((prev) => !prev);
-              }
-            }}
-          />
-        </View>
-        <View style={styles.button}>
-          <SecondaryButton
-            textline={"Reset"}
-            pressHandler={() => {
-              setTime(0);
-              setRunning(false);
-            }}
-          />
-        </View>
-        <View style={styles.button}>
-          <SecondaryButton
-            textline={"Upload Run"}
-            pressHandler={() => {
-              navigation.navigate("UploadRun");
-            }}
-          />
+                }
+              }}
+            />
+          </View>
+          <View style={styles.button}>
+            <SecondaryButton
+              textline={"Reset"}
+              pressHandler={() => {
+                setTime(0);
+                setRunning(false);
+              }}
+            />
+          </View>
+          <View style={styles.button}>
+            <SecondaryButton
+              textline={"Upload Run"}
+              pressHandler={() => {
+                navigation.navigate("UploadRun");
+              }}
+            />
+          </View>
         </View>
       </View>
-
-      <View style={styles.emptySpace}></View>
     </View>
   );
 }
@@ -116,26 +116,28 @@ export default TrainerRun;
 
 const styles = StyleSheet.create({
   mainContainer: {
-    flex: 1,
-    alignItems: "center",
-    // justifyContent: "center",
     backgroundColor: "#F8FFF5",
+    flex: 1,
   },
   headerContainer: {
-    marginTop: "20%",
-    // paddingTop: 40,
+    marginTop: 60,
+    paddingVertical: 40,
     paddingHorizontal: 20,
-    flex: 1,
-    // justifyContent: "center",
+    flex: 0.3,
+    justifyContent: "center",
+    alignItems: "flex-start"
   },
   header: {
     fontSize: 40,
-    fontWeight: "bold",
+    fontWeight: "bold"
   },
   instructionsContainer: {
-    flex: 1.5,
+    flex: 0.5,
     alignItems: "flex-start",
-    width: "80%",
+    width: "100%",
+    // bordorColor: "black",
+    // borderWidth: 1,
+    paddingHorizontal: "6%"
   },
   numbersWrapper: {
     flex: 0.5,
@@ -146,34 +148,40 @@ const styles = StyleSheet.create({
     backgroundColor: "#78B752",
     padding: 20,
     borderRadius: 30,
+    // bordorColor: "black",
+    // borderWidth: 1,
+    marginTop: "5%"
   },
   numbers: {
     flex: 1,
-    // height: "20%",
-    // width: "40%",
     alignItems: "center",
     backgroundColor: "#A9FF74",
     padding: 5,
     marginHorizontal: 5,
     borderRadius: 10,
+    // borderWidth: 1,
+    // bordorColor: "black",
     borderWidth: 1,
   },
   buttonWrapper: {
     flex: 3,
     paddingTop: "20%",
+    // bordorColor: "black",
+    // borderWidth: 1,
   },
   button: {
     flex: 0,
     width: "40%",
     height: "20%",
-    // backgroundColor: "#79FF63",
-    // borderRadius: 20,
-    // height: 30,
     margin: "0%",
     alignItems: "center",
     justifyContent: "center",
+    // bordorColor: "black",
+    // borderWidth: 1,
   },
-  emptySpace: {
-    flex: 0.2,
-  },
+  mainCompContainer: {
+    flex: 2.2,
+    paddingBottom: "5%",
+    alignItems: "center"
+  }
 });

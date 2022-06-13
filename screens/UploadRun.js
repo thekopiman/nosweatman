@@ -8,42 +8,48 @@ function UploadRun() {
   return (
     <View style={styles.mainContainer}>
       <View style={styles.headerContainer}>
-        <Text style={styles.header}>Upload your Run Time</Text>
+        <Text style={styles.header}>Upload your Run</Text>
+        <Text style={styles.header}>Time</Text>
       </View>
-      <View style={styles.instructionsContainer}>
-        <Text style={{ flex: 0, fontSize: 20, fontWeight: "bold" }}>
-          2.4km Run Duration
-        </Text>
+      <View style={styles.mainCompContainer}>
+        <View style={styles.instructionsContainer}>
+          <Text style={{ flex: 0, fontSize: 20, fontWeight: "bold" }}>
+            2.4km Run Duration
+          </Text>
+        </View>
+        <View style={styles.ContainerTextWrapper}>
+          <View style={{ flex: 2 }}>
+            <Text>Time (mm:ss):</Text>
+          </View>
+          <View style={styles.containertext}>
+            <TextInput
+              style={styles.input}
+              keyboardType="numeric"
+              onChangeText={setText}
+              value={text}
+              maxLength={2}
+            />
+          </View>
+          <View style={styles.containertext}>
+            <TextInput
+              style={styles.input}
+              keyboardType="numeric"
+              onChangeText={setText2}
+              value={text2}
+              maxLength={2}
+            />
+          </View>
+        </View>
+        <LoginButton
+          onPress={() => {
+            setText("");
+            setText2("");
+            //   text = "";
+          }}
+          text={"Submit"}
+        />
       </View>
-      <View style={styles.ContainerTextWrapper}>
-        <View style={{ flex: 2 }}>
-          <Text>Time (mm:ss):</Text>
-        </View>
-        <View style={styles.containertext}>
-          <TextInput
-            style={styles.input}
-            keyboardType="numeric"
-            onChangeText={setText}
-            value={text}
-          />
-        </View>
-        <View style={styles.containertext}>
-          <TextInput
-            style={styles.input}
-            keyboardType="numeric"
-            onChangeText={setText2}
-            value={text2}
-          />
-        </View>
-      </View>
-      <LoginButton
-        onPress={() => {
-          setText("");
-          setText2("");
-          //   text = "";
-        }}
-        text={"Submit"}
-      />
+      
     </View>
   );
 }
@@ -51,21 +57,20 @@ export default UploadRun;
 
 const styles = StyleSheet.create({
   mainContainer: {
-    flex: 1,
-    alignItems: "center",
-    // justifyContent: "center",
     backgroundColor: "#F8FFF5",
+    flex: 1,
   },
   headerContainer: {
-    marginTop: "30%",
-    // paddingTop: 40,
+    marginTop: 60,
+    paddingVertical: 40,
     paddingHorizontal: 20,
-    flex: 0,
-    // justifyContent: "center",
+    flex: 0.3,
+    justifyContent: "center",
+    alignItems: "flex-start"
   },
   header: {
     fontSize: 40,
-    fontWeight: "bold",
+    fontWeight: "bold"
   },
   instructionsContainer: {
     flex: 0,
@@ -91,11 +96,18 @@ const styles = StyleSheet.create({
     flex: 0,
     fontSize: 16,
     backgroundColor: "#97FF95",
-    borderRadius: 10,
+    borderRadius: 15,
     paddingVertical: 10,
     paddingHorizontal: 5,
     width: 40,
     fontSize: 16,
     textAlign: "center",
   },
+  mainCompContainer: {
+    flex: 2.2,
+    paddingBottom: "5%",
+    alignItems: "center",
+    // bordorColor: "black",
+    // borderWidth: 1,
+  }
 });

@@ -44,20 +44,22 @@ export default function LeaderboardScreen({ navigation }) {
           setItems={setItems}
         />
       </View>
-      <View style={[styles.listItemContainer, { backgroundColor: "#78B752" }]}>
-        <View style={styles.listItem}>
-          <Text>Name</Text>
-        </View>
-        <View style={styles.listItem}>
-          <Text>Score</Text>
-        </View>
-      </View>
-      <View style={styles.listContainer}>
-        <FlatList
-          data={displayedLeader}
-          keyExtractor={(item) => item.id}
-          renderItem={renderExerciseItem}
-        />
+        <View style={styles.listCompContainer}>
+          <View style={[styles.listItemContainer, { backgroundColor: "#78B752" }]}>
+            <View style={styles.listItem}>
+              <Text style={styles.listHeaderText}>Name</Text>
+            </View>
+            <View style={styles.listItem}>
+              <Text style={styles.listHeaderText}>Score</Text>
+            </View>
+          </View>
+          <View style={styles.listContainer}>
+            <FlatList
+              data={displayedLeader}
+              keyExtractor={(item) => item.id}
+              renderItem={renderExerciseItem}
+            />
+          </View>
       </View>
     </View>
   );
@@ -66,32 +68,29 @@ export default function LeaderboardScreen({ navigation }) {
 const styles = StyleSheet.create({
   maincontainer: {
     flex: 1,
-    alignItems: "center",
-    // justifyContent: "center",
     backgroundColor: "#F8FFF5",
   },
-
   headerContainer: {
     marginTop: 60,
     paddingVertical: 40,
     paddingHorizontal: 20,
-    flex: 2,
+    flex: 0.3,
     justifyContent: "center",
+    alignItems: "flex-start"
   },
   filterContainer: {
     paddingHorizontal: 40,
-    flex: 1,
-    justifyContent: "center",
+    flex: 0.3,
     elevation: 2,
-    zIndex: 100,
+    zIndex: 100
   },
   listContainer: {
     flex: 5,
-    justifyContent: "center",
+    justifyContent: "center"
   },
   header: {
     fontSize: 40,
-    fontWeight: "bold",
+    fontWeight: "bold"
   },
   listItemContainer: {
     flex: 1,
@@ -100,15 +99,23 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginVertical: 5,
     width: 300,
-    justifyContent: "space-between",
+    justifyContent: "space-between"
   },
   listItem: {
     flex: 1,
     padding: 10,
-    // borderWidth: 1,
-    // borderColor: "red",
     alignItems: "center",
     width: 150,
     textAlign: "center",
+    justifyContent: "center"
   },
+  listHeaderText: {
+    fontWeight: "bold",
+    fontSize: 18
+  },
+  listCompContainer: {
+    flex: 2.5,
+    alignItems: "center",
+    marginBottom: "5%"
+  }
 });

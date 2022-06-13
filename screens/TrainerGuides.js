@@ -7,26 +7,33 @@ function TrainerGuides({ navigation }) {
       <View style={styles.headerContainer}>
         <Text style={styles.header}>Guides</Text>
       </View>
-      <View style={styles.mainButtonContainer}>
-        <PrimaryButton
-          textline="Push Ups"
-          iconlink={require("../assets/pushup.png")}
-          pressHandler={() => navigation.navigate("TrainerPushUp")} //Change Location
-        />
+      <View style={styles.subHeader}>
+        <Text style={{ flex: 1, fontSize: 20, fontWeight: "bold" }}>
+          Select a sport:
+        </Text>
       </View>
-      <View style={styles.mainButtonContainer}>
-        <PrimaryButton
-          textline="Sit Ups"
-          iconlink={require("../assets/situp.png")}
-          pressHandler={() => navigation.navigate("TrainerSitUp")} //Change Location
-        />
-      </View>
-      <View style={styles.mainButtonContainer}>
-        <PrimaryButton
-          textline="2.4km run"
-          iconlink={require("../assets/running.png")}
-          pressHandler={() => navigation.navigate("TrainerRun")} //Change Location
-        />
+      <View style={styles.mainCompContainer}>
+        <View style={styles.mainButtonContainer}>
+          <PrimaryButton
+            textline="Push Ups"
+            iconlink={require("../assets/pushup.png")}
+            pressHandler={() => navigation.navigate("TrainerPushUp")} //Change Location
+          />
+        </View>
+        <View style={styles.mainButtonContainer}>
+          <PrimaryButton
+            textline="Sit Ups"
+            iconlink={require("../assets/situp.png")}
+            pressHandler={() => navigation.navigate("TrainerSitUp")} //Change Location
+          />
+        </View>
+        <View style={styles.mainButtonContainer}>
+          <PrimaryButton
+            textline="2.4km run"
+            iconlink={require("../assets/running.png")}
+            pressHandler={() => navigation.navigate("TrainerRun")} //Change Location
+          />
+        </View>
       </View>
     </View>
   );
@@ -35,25 +42,34 @@ export default TrainerGuides;
 
 const styles = StyleSheet.create({
   mainContainer: {
-    flex: 1,
-    alignItems: "center",
-    // justifyContent: "center",
     backgroundColor: "#F8FFF5",
+    flex: 1,
   },
   headerContainer: {
-    marginTop: "20%",
-    // paddingTop: 40,
+    marginTop: 60,
+    paddingVertical: 40,
     paddingHorizontal: 20,
-    flex: 1,
-    // justifyContent: "center",
+    flex: 0.3,
+    justifyContent: "center",
+    alignItems: "flex-start"
   },
   header: {
     fontSize: 40,
-    fontWeight: "bold",
+    fontWeight: "bold"
   },
   mainButtonContainer: {
     flex: 1,
     padding: 15,
     width: "100%",
   },
+  mainCompContainer: {
+    flex: 2.7,
+    paddingBottom: "5%",
+    alignItems: "center"
+  },
+  subHeader: { 
+    flex: 0.1, 
+    alignItems: "flex-start",
+    paddingHorizontal: 25
+  }
 });

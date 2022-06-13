@@ -50,7 +50,9 @@ function LoginScreen({ navigation, route }) {
           secureTextEntry={true}
         />
       </View>
-      <LoginButton onPress={pressHandler} text={"Login"} />
+      <View>
+        <LoginButton onPress={pressHandler} text={"Login"} />
+      </View>
     </View>
   );
 }
@@ -60,19 +62,18 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#F8FFF5",
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: "center"
   },
   imagewrapper: {
-    flex: 0,
+    flex: 0.5,
     width: "70%",
     height: "30%",
     resizeMode: "contain",
     borderBottomColor: "black",
+    marginTop: 100
   },
   containertext: {
     marginVertical: 10,
-    flex: 0,
     backgroundColor: "#97FF95",
     height: 30,
     width: "50%",
@@ -85,9 +86,8 @@ const styles = StyleSheet.create({
     marginVertical: 8,
     paddingHorizontal: 4,
     paddingVertical: 8,
-    paddingLeft: 20,
+    paddingHorizontal: 22,
     fontSize: 16,
     backgroundColor: "#97FF95",
-  },
-  button: {},
+  }
 });

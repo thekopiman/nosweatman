@@ -55,12 +55,16 @@ const styles = StyleSheet.create({
     backgroundColor: "#F8FFF5",
   },
   headingContainer: {
-    paddingVertical: 20,
-    marginBottom: 20,
+    marginTop: 60,
+    paddingVertical: 40,
+    paddingHorizontal: 20,
+    flex: 0.3,
+    justifyContent: "center",
+    alignItems: "flex-start"
   },
   header: {
     fontSize: 40,
-    fontWeight: "800",
+    fontWeight: "bold",
   },
   bookingContainer: {
     marginTop: 20,
