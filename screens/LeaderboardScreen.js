@@ -108,5 +108,7 @@ const styles = StyleSheet.create({
     // borderWidth: 1,
     // borderColor: "red",
     alignItems: "center",
+    width: 150,
+    textAlign: "center",
   },
 });
