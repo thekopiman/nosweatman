@@ -1,15 +1,13 @@
 import { View, Text, Button, StyleSheet, Modal } from "react-native";
 import SelectDropdown from "react-native-select-dropdown";
+import Selected from "../models/registration";
 
 export default function BookIppt(props) {
   const locations = ["Maju FCC", "Bedok FCC", "Khatib FCC", "Kranji FCC"];
   const timing = ["0930 hrs to 1045 hrs", "1900 hrs to 2015 hrs"];
   const date = ["2022-06-15", "2022-06-16", "2022-06-17"];
-  const selected = {
-    location: null,
-    date: null,
-    time: null,
-  };
+  var selected = new Selected();
+
   return (
     <Modal visible={props.visible} animationType={"slide"}>
       <View style={styles.mainContainer}>
@@ -19,7 +17,7 @@ export default function BookIppt(props) {
             data={locations}
             buttonStyle={styles.dropDownButton}
             onSelect={(selectedItem, index) => {
-              console.log(selectedItem, index);
+              // console.log(selectedItem, index);
               selected.location = selectedItem;
             }}
             buttonTextAfterSelection={(selectedItem, index) => {
@@ -36,7 +34,7 @@ export default function BookIppt(props) {
             data={date}
             buttonStyle={styles.dropDownButton}
             onSelect={(selectedItem, index) => {
-              console.log(selectedItem, index);
+              // console.log(selectedItem, index);
               selected.date = selectedItem;
             }}
             buttonTextAfterSelection={(selectedItem, index) => {
@@ -53,7 +51,7 @@ export default function BookIppt(props) {
             data={timing}
             buttonStyle={styles.dropDownButton}
             onSelect={(selectedItem, index) => {
-              console.log(selectedItem, index);
+              // console.log(selectedItem, index);
               selected.time = selectedItem;
             }}
             buttonTextAfterSelection={(selectedItem, index) => {
@@ -69,7 +67,7 @@ export default function BookIppt(props) {
             <Button title="Cancel" onPress={props.onCancel} />
           </View>
           <View style={styles.button}>
-            <Button title="Book" onPress={props.onCancel} />
+            <Button title="Book" onPress={() => props.onBookIppt(selected)} />
           </View>
         </View>
       </View>

@@ -1,8 +1,15 @@
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { TextInput, View, StyleSheet, Text } from "react-native";
 
 import PrimaryButton from "../components/PrimaryButton";
 
-function HomePage(navigation) {
+const Stack = createNativeStackNavigator();
+
+function HomePage({ navigation }) {
+  // function pressIPPTtrainerHandler() {
+  //   navigation.navigate("IPPT Trainer");
+  // }
   return (
     <View style={styles.overallContainer}>
       <View style={styles.headerContainer}>
@@ -14,24 +21,28 @@ function HomePage(navigation) {
         <PrimaryButton
           textline="IPPT Trainer"
           iconlink={require("../assets/running.png")}
+          pressHandler={() => navigation.navigate("IPPT Trainer")}
         />
       </View>
       <View style={styles.subButtonContainer}>
         <PrimaryButton
           textline="Upload scores"
-          iconlink={require("../assets/running.png")} // Change the file location later
+          iconlink={require("../assets/uploadscores.png")} // Change the file location later
+          pressHandler={() => navigation.navigate("UploadScores")}
         />
       </View>
       <View style={styles.subButtonContainer}>
         <PrimaryButton
           textline="Book IPPT"
-          iconlink={require("../assets/running.png")} // Change the file location later
+          iconlink={require("../assets/situp.png")} // Change the file location later
+          pressHandler={() => navigation.navigate("BookIPPT")}
         />
       </View>
       <View style={styles.subButtonContainer}>
         <PrimaryButton
           textline="Health Checkup"
-          iconlink={require("../assets/running.png")} // Change the file location later
+          iconlink={require("../assets/healthcheckup.png")} // Change the file location later
+          pressHandler={() => navigation.navigate("HealthCheckUp")}
         />
       </View>
       <View style={styles.subButtonContainer}></View>
@@ -54,7 +65,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   header: {
-    fontSize: 40,
+    fontSize: 35,
     fontWeight: "bold",
   },
   mainButtonContainer: {

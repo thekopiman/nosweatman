@@ -89,6 +89,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 40,
     flex: 1,
     justifyContent: "center",
+    elevation: 2,
+    zIndex: 100,
   },
   listContainer: {
     flex: 5,

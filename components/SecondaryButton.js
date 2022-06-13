@@ -1,6 +1,6 @@
 import { View, Text, Pressable, StyleSheet, Image } from "react-native";
 
-function PrimaryButton({ textline, iconlink, pressHandler }) {
+function SecondaryButton({ textline, pressHandler }) {
   return (
     <View style={styles.buttonOuterContainer}>
       {/* pressed is a boolean and its name is fixed */}
@@ -16,9 +16,6 @@ function PrimaryButton({ textline, iconlink, pressHandler }) {
         android_ripple={{ color: "#ffada9" }}
       >
         <View style={styles.componentView}>
-          <View style={styles.imageView}>
-            <Image style={styles.image} source={iconlink} />
-          </View>
           <View style={styles.textView}>
             <Text style={styles.buttonText}>{textline}</Text>
           </View>
@@ -28,11 +25,11 @@ function PrimaryButton({ textline, iconlink, pressHandler }) {
   );
 }
 
-export default PrimaryButton;
+export default SecondaryButton;
 
 const styles = StyleSheet.create({
   buttonOuterContainer: {
-    borderRadius: 28,
+    borderRadius: 10,
     margin: 4,
     overflow: "hidden",
     flex: 1,
@@ -41,7 +38,7 @@ const styles = StyleSheet.create({
   // Main button style
   buttonInnerContainer: {
     backgroundColor: "#A9FF74",
-    paddingVertical: 8,
+    paddingVertical: 3,
     paddingHorizontal: 16,
     flex: 1,
     justifyContent: "center",
@@ -49,7 +46,7 @@ const styles = StyleSheet.create({
   // Button text
   buttonText: {
     textAlign: "center",
-    fontSize: 30,
+    fontSize: 15,
     fontWeight: "bold",
   },
   // Dedicated style for ios
@@ -60,22 +57,10 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     flex: 1,
   },
-  imageView: {
-    flex: 0.25,
-    resizeMode: "contain",
-    justifyContent: "center",
-    alignItems: "flex-start",
-    padding: 10,
-  },
-  image: {
-    resizeMode: "contain",
-    width: "100%",
-    height: "100%",
-  },
   textView: {
     flex: 1,
     alignItems: "center",
-    justifyContent: "flex-start",
+    justifyContent: "center",
     flexDirection: "row",
   },
 });

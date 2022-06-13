@@ -1,6 +1,6 @@
 import { Pressable, View, Text, StyleSheet } from "react-native";
 
-function LoginButton({ onPress }) {
+function LoginButton({ onPress, text }) {
   return (
     <View style={[styles.gridItem, { backgroundColor: "#79FF63" }]}>
       <Pressable
@@ -9,7 +9,7 @@ function LoginButton({ onPress }) {
         onPress={onPress}
       >
         <View style={styles.innerContainer}>
-          <Text style={{ color: "black" }}>Login</Text>
+          <Text style={{ color: "black" }}>{text}</Text>
         </View>
       </Pressable>
     </View>

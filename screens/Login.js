@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Image, TextInput } from "react-native";
 
 import LoginButton from "../components/loginbutton";
 
-function LoginScreen({ navigation }) {
+function LoginScreen({ navigation, route }) {
   const [text, onChangeText] = useState("");
   const [textpw, onChangepw] = useState("");
 
@@ -19,7 +19,9 @@ function LoginScreen({ navigation }) {
       text.replace(/ /g, "").toLowerCase() === "admin" &&
       textpw.replace(/ /g, "").toLowerCase() === "admin"
     ) {
-      navigation.navigate("Home Page");
+      // navigation.navigate("Home Page");
+      route.params.setState(true);
+      console.log("Logined");
     }
   }
 
@@ -48,7 +50,7 @@ function LoginScreen({ navigation }) {
           secureTextEntry={true}
         />
       </View>
-      <LoginButton onPress={pressHandler} />
+      <LoginButton onPress={pressHandler} text={"Login"} />
     </View>
   );
 }
