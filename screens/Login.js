@@ -77,6 +77,8 @@ const styles = StyleSheet.create({
     height: 30,
     width: "50%",
     borderRadius: 20,
+    justifyContent: "center",
+    paddingHorizontal: 10,
   },
   input: {
     flex: 1,
