@@ -85,5 +85,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     width: 100,
     fontSize: 16,
+    textAlign: "center",
   },
 });
