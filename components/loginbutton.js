@@ -2,10 +2,14 @@ import { Pressable, View, Text, StyleSheet } from "react-native";
 
 function LoginButton({ onPress, text }) {
   return (
-    <View style={[styles.gridItem, { backgroundColor: "#79FF63" }]}>
+    <View style={[styles.gridItem]}>
       <Pressable
         android_ripple={{ color: "grey" }}
-        style={styles.button}
+        style={({ pressed }) =>
+          pressed
+            ? [styles.pressed, styles.buttonInnerContainer]
+            : styles.buttonInnerContainer
+        }
         onPress={onPress}
       >
         <View style={styles.innerContainer}>
@@ -22,16 +26,24 @@ const styles = StyleSheet.create({
   gridItem: {
     flex: 0,
     margin: 16,
-    height: 20,
-    width: "20%",
-    borderRadius: 8,
+    height: 25,
+    width: 100,
     elevation: 4,
-    backgroundColor: "white",
     shadowColor: "black",
     shadowOpacity: 0.25,
     shadowOffset: { width: 0, height: 2 },
     shadowRadius: 8,
     justifyContent: "flex-end",
+  },
+  // Dedicated style for ios
+  pressed: {
+    opacity: 0.75
+  },
+  buttonInnerContainer: {
+    backgroundColor: "#A9FF74",
+    flex: 1,
+    justifyContent: "center",
+    borderRadius: 15,
   },
   button: {
     flex: 1,
