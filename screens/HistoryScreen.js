@@ -115,5 +115,7 @@ const styles = StyleSheet.create({
     // borderWidth: 1,
     // borderColor: "red",
     alignItems: "center",
+    width: 100,
+    textAlign: "center",
   },
 });
