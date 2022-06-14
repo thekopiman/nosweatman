@@ -50,3 +50,6 @@ We ran using Expo Go:
 - Samsung S20 FE 5G
 - IPhone 12
 - Google Pixel 4A (Android Studio Emulator)
+
+# Disclaimer
+This App is just a **Proof Of Concept**. There is not Back-End attached to this app, so whatever data you uploaded (eg. pushup scores, ippt appointments) will not be saved. The data you have seen in the Leaderboard and History are dummy data.
