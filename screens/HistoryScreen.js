@@ -51,13 +51,13 @@ export default function HistoryScreen({ navigation }) {
       <View style={styles.listCompContainer}>
         <View style={[styles.listItemContainer, { backgroundColor: "#78B752" }]}>
           <View style={styles.listItem}>
-            <Text>Date</Text>
+            <Text style={styles.listHeaderText}>Date</Text>
           </View>
           <View style={styles.listItem}>
-            <Text>Time</Text>
+            <Text style={styles.listHeaderText}>Time</Text>
           </View>
           <View style={styles.listItem}>
-            <Text>Score</Text>
+            <Text style={styles.listHeaderText}>Score</Text>
           </View>
         </View>
         <View style={styles.listContainer}>
