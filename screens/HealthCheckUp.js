@@ -44,15 +44,11 @@ export default function HealthCheckUp() {
         <Text style={styles.header}>Health Check Up</Text>
       </View>
       <View style={styles.mainCompContainer}>
-        <Pressable 
+        <Pressable
           onPress={startBookIpptHandler}
-          style={({ pressed }) =>
-            pressed
-              ? [styles.pressed, styles.buttonInnerContainer]
-              : styles.buttonInnerContainer
-          }
+          style={({ pressed }) => (pressed ? styles.pressed : {})}
           android_ripple={{ color: "#ffada9" }}
-          >
+        >
           <View style={styles.buttonContainer}>
             <Text style={styles.buttonText}>Add Appointment</Text>
             <View style={styles.imageContainer}>
@@ -74,7 +70,7 @@ export default function HealthCheckUp() {
         <View
           style={[
             styles.listItemContainer,
-            { flex: 0, backgroundColor: "#78B752" },
+            { flex: 0, backgroundColor: "#00C7E2" },
           ]}
         >
           <View style={styles.listItem}>
@@ -93,7 +89,6 @@ export default function HealthCheckUp() {
           renderItem={renderListItem}
         />
       </View>
-      
     </View>
   );
 }
@@ -101,7 +96,7 @@ export default function HealthCheckUp() {
 const styles = StyleSheet.create({
   appContainer: {
     flex: 1,
-    backgroundColor: "#F8FFF5"
+    backgroundColor: "#F8FFF5",
   },
   headingContainer: {
     marginTop: 60,
@@ -109,7 +104,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     flex: 0.3,
     justifyContent: "center",
-    alignItems: "flex-start"
+    alignItems: "flex-start",
   },
   header: {
     fontSize: 40,
@@ -129,7 +124,7 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     flexDirection: "row",
-    backgroundColor: "#A9FF74",
+    backgroundColor: "#74F7FF",
     height: 100,
     borderRadius: 28,
     alignItems: "center",
@@ -138,7 +133,7 @@ const styles = StyleSheet.create({
   buttonText: {
     fontSize: 24,
     fontWeight: "800",
-    paddingLeft: 20
+    paddingLeft: 20,
   },
   buttonImg: {
     width: 60,
@@ -146,28 +141,28 @@ const styles = StyleSheet.create({
     resizeMode: "contain",
   },
   imageContainer: {
-    backgroundColor: "#78B752",
+    backgroundColor: "#05A1D2",
     padding: 6,
     marginRight: 20,
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 15,
     width: 80,
-    height: 80
+    height: 80,
   },
   listItemContainer: {
     flex: 1,
     flexDirection: "row",
-    backgroundColor: "#DFFFCC",
+    backgroundColor: "#CCF6FF",
     borderRadius: 15,
     marginVertical: 5,
     justifyContent: "center",
     alignItems: "center",
-    alignContent: "center"
+    alignContent: "center",
   },
   listItem: {
     flex: 1,
     padding: 10,
-    alignItems: "center"
-  }
+    alignItems: "center",
+  },
 });

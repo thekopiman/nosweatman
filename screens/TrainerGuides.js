@@ -17,21 +17,24 @@ function TrainerGuides({ navigation }) {
           <PrimaryButton
             textline="Push Ups"
             iconlink={require("../assets/pushup.png")}
-            pressHandler={() => navigation.navigate("PushUpGuide")} //Change Location
+            pressHandler={() => navigation.navigate("PushUpGuide")}
+            backgroundColor="#FFB470"
           />
         </View>
         <View style={styles.mainButtonContainer}>
           <PrimaryButton
             textline="Sit Ups"
             iconlink={require("../assets/situp.png")}
-            pressHandler={() => navigation.navigate("SitUpGuide")} //Change Location
+            pressHandler={() => navigation.navigate("SitUpGuide")}
+            backgroundColor="#FFB470"
           />
         </View>
         <View style={styles.mainButtonContainer}>
           <PrimaryButton
             textline="2.4km run"
             iconlink={require("../assets/running.png")}
-            pressHandler={() => navigation.navigate("RunGuide")} //Change Location
+            pressHandler={() => navigation.navigate("RunGuide")}
+            backgroundColor="#FFB470"
           />
         </View>
       </View>

@@ -44,13 +44,9 @@ export default function BookIPPT() {
         <Text style={styles.header}>IPPT Booking</Text>
       </View>
       <View style={styles.mainCompContainer}>
-        <Pressable 
+        <Pressable
           onPress={startBookIpptHandler}
-          style={({ pressed }) =>
-            pressed
-              ? [styles.pressed, styles.buttonInnerContainer]
-              : styles.buttonInnerContainer
-          }
+          style={({ pressed }) => (pressed ? styles.pressed : {})}
           android_ripple={{ color: "#ffada9" }}
         >
           <View style={styles.buttonContainer}>
@@ -71,7 +67,7 @@ export default function BookIPPT() {
         <View
           style={[
             styles.listItemContainer,
-            { flex: 0, backgroundColor: "#78B752" },
+            { flex: 0, backgroundColor: "#F35151" },
           ]}
         >
           <View style={styles.listItem}>
@@ -90,8 +86,6 @@ export default function BookIPPT() {
           renderItem={renderListItem}
         />
       </View>
-      
-      
     </View>
   );
 }
@@ -99,7 +93,7 @@ export default function BookIPPT() {
 const styles = StyleSheet.create({
   appContainer: {
     flex: 1,
-    backgroundColor: "#F8FFF5"
+    backgroundColor: "#F8FFF5",
   },
   headingContainer: {
     marginTop: 60,
@@ -107,7 +101,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     flex: 0.3,
     justifyContent: "center",
-    alignItems: "flex-start"
+    alignItems: "flex-start",
   },
   header: {
     fontSize: 40,
@@ -127,7 +121,7 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     flexDirection: "row",
-    backgroundColor: "#A9FF74",
+    backgroundColor: "#FF8B8B",
     height: 100,
     borderRadius: 28,
     alignItems: "center",
@@ -136,7 +130,7 @@ const styles = StyleSheet.create({
   buttonText: {
     fontSize: 24,
     fontWeight: "800",
-    paddingLeft: 20
+    paddingLeft: 20,
   },
   buttonImg: {
     width: 60,
@@ -144,28 +138,28 @@ const styles = StyleSheet.create({
     resizeMode: "contain",
   },
   imageContainer: {
-    backgroundColor: "#78B752",
+    backgroundColor: "#F35151",
     padding: 6,
     marginRight: 20,
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 15,
     width: 80,
-    height: 80
+    height: 80,
   },
   listItemContainer: {
     flex: 1,
     flexDirection: "row",
-    backgroundColor: "#DFFFCC",
+    backgroundColor: "#FFD9D9",
     borderRadius: 15,
     marginVertical: 5,
     justifyContent: "center",
     alignItems: "center",
-    alignContent: "center"
+    alignContent: "center",
   },
   listItem: {
     flex: 1,
     padding: 10,
-    alignItems: "center"
-  }
+    alignItems: "center",
+  },
 });

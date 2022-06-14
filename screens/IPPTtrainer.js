@@ -18,6 +18,7 @@ function IPPTtrainer({ navigation }) {
             textline="Push Ups"
             iconlink={require("../assets/pushup.png")}
             pressHandler={() => navigation.navigate("TrainerPushUp")}
+            backgroundColor="#A9FF74"
           />
         </View>
         <View style={styles.mainButtonContainer}>
@@ -25,6 +26,7 @@ function IPPTtrainer({ navigation }) {
             textline="Sit Ups"
             iconlink={require("../assets/situp.png")}
             pressHandler={() => navigation.navigate("TrainerSitUp")}
+            backgroundColor="#A9FF74"
           />
         </View>
         <View style={styles.mainButtonContainer}>
@@ -32,6 +34,7 @@ function IPPTtrainer({ navigation }) {
             textline="2.4km run"
             iconlink={require("../assets/running.png")}
             pressHandler={() => navigation.navigate("TrainerRun")}
+            backgroundColor="#A9FF74"
           />
         </View>
         <View style={styles.mainButtonContainer}>
@@ -39,6 +42,7 @@ function IPPTtrainer({ navigation }) {
             textline="Guides"
             iconlink={require("../assets/guides.png")}
             pressHandler={() => navigation.navigate("TrainerGuides")}
+            backgroundColor="#FFB470"
           />
         </View>
       </View>

@@ -14,12 +14,7 @@ import {
 import YoutubeIframe, { getYoutubeMeta } from "react-native-youtube-iframe";
 import { Card, Button, Title, Paragraph } from "react-native-paper";
 
-const videoSeries = [
-  "ii4i33-3z8c",
-  "R23OeFCssaw",
-  "F3RGIBExjfE",
-  "6WPCNqUy9ls",
-];
+const videoSeries = ["CCZGD55NxGo", "kzSJvEbIKi4"];
 
 const PushUpGuide = () => {
   const [modalVisible, showModal] = useState(false);

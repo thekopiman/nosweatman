@@ -23,6 +23,7 @@ function HomePage({ navigation }) {
             textline="IPPT Trainer"
             iconlink={require("../assets/running.png")}
             pressHandler={() => navigation.navigate("IPPT Trainer")}
+            backgroundColor="#A9FF74"
           />
         </View>
         <View style={styles.subButtonContainer}>
@@ -30,6 +31,7 @@ function HomePage({ navigation }) {
             textline="Upload scores"
             iconlink={require("../assets/uploadscores.png")} // Change the file location later
             pressHandler={() => navigation.navigate("UploadScores")}
+            backgroundColor="#FFED50"
           />
         </View>
         <View style={styles.subButtonContainer}>
@@ -37,6 +39,7 @@ function HomePage({ navigation }) {
             textline="Book IPPT"
             iconlink={require("../assets/situp.png")} // Change the file location later
             pressHandler={() => navigation.navigate("BookIPPT")}
+            backgroundColor="#FF8B8B"
           />
         </View>
         <View style={styles.subButtonContainer}>
@@ -44,6 +47,7 @@ function HomePage({ navigation }) {
             textline="Health Checkup"
             iconlink={require("../assets/healthcheckup.png")} // Change the file location later
             pressHandler={() => navigation.navigate("HealthCheckUp")}
+            backgroundColor="#00DFED"
           />
         </View>
       </View>
