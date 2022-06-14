@@ -58,24 +58,24 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     flex: 0.3,
     justifyContent: "center",
-    alignItems: "flex-start"
+    alignItems: "flex-start",
   },
   header: {
     fontSize: 40,
-    fontWeight: "bold"
+    fontWeight: "bold",
   },
   mainButtonContainer: {
     flex: 0.65,
     padding: 15,
     width: "100%",
   },
-  subHeader: { 
-    flex: 0.1, 
+  subHeader: {
+    flex: 0.3,
     alignItems: "flex-start",
-    paddingHorizontal: 25
+    paddingHorizontal: 25,
   },
   mainCompContainer: {
     flex: 2.7,
-    paddingBottom: "5%"
-  }
+    paddingBottom: "5%",
+  },
 });

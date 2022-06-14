@@ -33,49 +33,60 @@ const RunGuide = () => {
   const closeModal = useCallback(() => showModal(false), []);
 
   return (
-    <SafeAreaView style={{ margin: 25, flex: 1 }}>
-      <View style={{ flex: 1, margin: 20, borderColor: "black" }}>
-        <FlatList
-          style={{ flex: 1 }}
-          contentContainerStyle={{ margin: 25 }}
-          ListHeaderComponent={
-            <>
-              <Text style={{ fontSize: 18, fontWeight: "bold" }}>
-                Running tips
-              </Text>
-            </>
-          }
-          data={videoSeries}
-          renderItem={({ item }) => (
-            <VideoItem videoId={item} onPress={onVideoPress} />
-          )}
-          keyExtractor={(item) => item}
-        />
-      </View>
-      <Modal
-        visible={modalVisible}
-        transparent={true}
-        onRequestClose={closeModal}
-      >
-        <VideoModal videoId={selectedVideo} onClose={closeModal} />
-      </Modal>
-      <View style={{ flex: 3 }}>
-        <ScrollView>
-          <CreateCard
-            title="Running Techniques"
-            uri="https://images.unsplash.com/flagged/photo-1556746834-cbb4a38ee593?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjd8fHJ1bm5pbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
-            infoPage="https://www.healthline.com/health/exercise-fitness/proper-running-form"
-            paraData="Proper form is important in preventing injuries. Read on to learn how to run injury free!"
+    <View style={{ flex: 1, backgroundColor: "#F8FFF5" }}>
+      <SafeAreaView style={{ margin: 25, flex: 1 }}>
+        <View
+          style={{
+            flex: 1,
+            margin: 20,
+            borderColor: "black",
+            backgroundColor: "#DFFFCC",
+            paddingBottom: "10%",
+            borderRadius: 20,
+          }}
+        >
+          <FlatList
+            style={{ flex: 1 }}
+            contentContainerStyle={{ margin: 25 }}
+            ListHeaderComponent={
+              <>
+                <Text style={{ fontSize: 18, fontWeight: "bold" }}>
+                  Running tips
+                </Text>
+              </>
+            }
+            data={videoSeries}
+            renderItem={({ item }) => (
+              <VideoItem videoId={item} onPress={onVideoPress} />
+            )}
+            keyExtractor={(item) => item}
           />
-          <CreateCard
-            title="Creating a training plan"
-            uri="https://images.unsplash.com/photo-1502904550040-7534597429ae?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8cnVubmluZyUyMHRyYWluaW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
-            infoPage="https://thesmartlocal.com/read/ippt-running-tips/"
-            paraData="Training consistently is important to ensure that you can reach your target times at IPPT. Here are some tips to help you on your training."
-          />
-        </ScrollView>
-      </View>
-    </SafeAreaView>
+        </View>
+        <Modal
+          visible={modalVisible}
+          transparent={true}
+          onRequestClose={closeModal}
+        >
+          <VideoModal videoId={selectedVideo} onClose={closeModal} />
+        </Modal>
+        <View style={{ flex: 3 }}>
+          <ScrollView>
+            <CreateCard
+              title="Running Techniques"
+              uri="https://images.unsplash.com/flagged/photo-1556746834-cbb4a38ee593?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjd8fHJ1bm5pbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+              infoPage="https://www.healthline.com/health/exercise-fitness/proper-running-form"
+              paraData="Proper form is important in preventing injuries. Read on to learn how to run injury free!"
+            />
+            <CreateCard
+              title="Creating a training plan"
+              uri="https://images.unsplash.com/photo-1502904550040-7534597429ae?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8cnVubmluZyUyMHRyYWluaW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+              infoPage="https://thesmartlocal.com/read/ippt-running-tips/"
+              paraData="Training consistently is important to ensure that you can reach your target times at IPPT. Here are some tips to help you on your training."
+            />
+          </ScrollView>
+        </View>
+      </SafeAreaView>
+    </View>
   );
 };
 

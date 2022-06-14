@@ -13,6 +13,9 @@ import TrainerSitUp from "./TrainerSitUp";
 import UploadPushUp from "./UploadPushUp";
 import UploadSitUp from "./UploadSitUp";
 import UploadRun from "./UploadRun";
+import SitUpGuide from "./sitUpGuide";
+import PushUpGuide from "./pushUpGuide";
+import RunGuide from "./runGuide";
 
 const Stack = createNativeStackNavigator();
 
@@ -77,6 +80,21 @@ function HomePageWrapper() {
       <Stack.Screen
         name="UploadRun"
         component={UploadRun}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="SitUpGuide"
+        component={SitUpGuide}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="PushUpGuide"
+        component={PushUpGuide}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="RunGuide"
+        component={RunGuide}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>

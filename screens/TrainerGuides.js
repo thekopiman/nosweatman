@@ -17,21 +17,21 @@ function TrainerGuides({ navigation }) {
           <PrimaryButton
             textline="Push Ups"
             iconlink={require("../assets/pushup.png")}
-            pressHandler={() => navigation.navigate("TrainerPushUp")} //Change Location
+            pressHandler={() => navigation.navigate("PushUpGuide")} //Change Location
           />
         </View>
         <View style={styles.mainButtonContainer}>
           <PrimaryButton
             textline="Sit Ups"
             iconlink={require("../assets/situp.png")}
-            pressHandler={() => navigation.navigate("TrainerSitUp")} //Change Location
+            pressHandler={() => navigation.navigate("SitUpGuide")} //Change Location
           />
         </View>
         <View style={styles.mainButtonContainer}>
           <PrimaryButton
             textline="2.4km run"
             iconlink={require("../assets/running.png")}
-            pressHandler={() => navigation.navigate("TrainerRun")} //Change Location
+            pressHandler={() => navigation.navigate("RunGuide")} //Change Location
           />
         </View>
       </View>
@@ -51,11 +51,11 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     flex: 0.3,
     justifyContent: "center",
-    alignItems: "flex-start"
+    alignItems: "flex-start",
   },
   header: {
     fontSize: 40,
-    fontWeight: "bold"
+    fontWeight: "bold",
   },
   mainButtonContainer: {
     flex: 1,
@@ -65,11 +65,11 @@ const styles = StyleSheet.create({
   mainCompContainer: {
     flex: 2.7,
     paddingBottom: "5%",
-    alignItems: "center"
+    alignItems: "center",
   },
-  subHeader: { 
-    flex: 0.1, 
+  subHeader: {
+    flex: 0.3,
     alignItems: "flex-start",
-    paddingHorizontal: 25
-  }
+    paddingHorizontal: 25,
+  },
 });

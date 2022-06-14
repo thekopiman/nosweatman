@@ -33,60 +33,70 @@ const SitUpGuide = () => {
   const closeModal = useCallback(() => showModal(false), []);
 
   return (
-    <SafeAreaView style={{ margin: 25, flex: 1 }}>
-      <View
+    <View style={{ flex: 1, backgroundColor: "#F8FFF5" }}>
+      <SafeAreaView
         style={{
+          margin: 25,
           flex: 1,
-          margin: 20,
-          borderColor: "black",
         }}
       >
-        <FlatList
-          style={{ flex: 1, borderRadius: 25, backgroundColor: "#F8FFF5" }}
-          contentContainerStyle={{ margin: 25 }}
-          ListHeaderComponent={
-            <>
-              <Text
-                style={{
-                  fontSize: 18,
-                  fontWeight: "bold",
-                }}
-              >
-                Sit Up Resources
-              </Text>
-            </>
-          }
-          data={videoSeries}
-          renderItem={({ item }) => (
-            <VideoItem videoId={item} onPress={onVideoPress} />
-          )}
-          keyExtractor={(item) => item}
-        />
-      </View>
-      <Modal
-        visible={modalVisible}
-        transparent={true}
-        onRequestClose={closeModal}
-      >
-        <VideoModal videoId={selectedVideo} onClose={closeModal} />
-      </Modal>
-      <View style={{ flex: 3 }}>
-        <ScrollView>
-          <CreateCard
-            title="Sit Up Techniques"
-            uri="https://media.istockphoto.com/photos/shot-of-a-young-man-doing-crunches-in-a-gym-picture-id1370649785?b=1&k=20&m=1370649785&s=170667a&w=0&h=u72ZZ0M3h3Bdu-dWwSzhpuHX1G6AWFpKTqUs_r89y_0="
-            infoPage="https://www.livestrong.com/article/487008-how-to-do-a-correct-sit-up/"
-            paraData="Proper form is important in preventing injuries. Learn to perform a proper sit up here!"
+        <View
+          style={{
+            flex: 1,
+            margin: 20,
+            borderColor: "black",
+            backgroundColor: "#DFFFCC",
+            paddingBottom: "10%",
+            borderRadius: 20,
+          }}
+        >
+          <FlatList
+            style={{ flex: 1, width: "100%" }}
+            contentContainerStyle={{ margin: 15 }}
+            ListHeaderComponent={
+              <>
+                <Text
+                  style={{
+                    fontSize: 18,
+                    fontWeight: "bold",
+                  }}
+                >
+                  Sit Up Resources
+                </Text>
+              </>
+            }
+            data={videoSeries}
+            renderItem={({ item }) => (
+              <VideoItem videoId={item} onPress={onVideoPress} />
+            )}
+            keyExtractor={(item) => item}
           />
-          <CreateCard
-            title="Creating a training plan"
-            uri="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8dHJhaW5pbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
-            infoPage="https://barbend.com/beginner-push-up-program/"
-            paraData="Training consistently is important to ensure that you can improve your sit up count. Here are some ways to do so."
-          />
-        </ScrollView>
-      </View>
-    </SafeAreaView>
+        </View>
+        <Modal
+          visible={modalVisible}
+          transparent={true}
+          onRequestClose={closeModal}
+        >
+          <VideoModal videoId={selectedVideo} onClose={closeModal} />
+        </Modal>
+        <View style={{ flex: 3 }}>
+          <ScrollView>
+            <CreateCard
+              title="Sit Up Techniques"
+              uri="https://media.istockphoto.com/photos/shot-of-a-young-man-doing-crunches-in-a-gym-picture-id1370649785?b=1&k=20&m=1370649785&s=170667a&w=0&h=u72ZZ0M3h3Bdu-dWwSzhpuHX1G6AWFpKTqUs_r89y_0="
+              infoPage="https://www.livestrong.com/article/487008-how-to-do-a-correct-sit-up/"
+              paraData="Proper form is important in preventing injuries. Learn to perform a proper sit up here!"
+            />
+            <CreateCard
+              title="Creating a training plan"
+              uri="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8dHJhaW5pbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+              infoPage="https://barbend.com/beginner-push-up-program/"
+              paraData="Training consistently is important to ensure that you can improve your sit up count. Here are some ways to do so."
+            />
+          </ScrollView>
+        </View>
+      </SafeAreaView>
+    </View>
   );
 };
 

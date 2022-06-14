@@ -33,49 +33,62 @@ const PushUpGuide = () => {
   const closeModal = useCallback(() => showModal(false), []);
 
   return (
-    <SafeAreaView style={{ margin: 25, flex: 1 }}>
-      <View style={{ flex: 1, margin: 20, borderColor: "black" }}>
-        <FlatList
-          style={{ flex: 1 }}
-          contentContainerStyle={{ margin: 25 }}
-          ListHeaderComponent={
-            <>
-              <Text style={{ fontSize: 18, fontWeight: "bold" }}>
-                Running tips
-              </Text>
-            </>
-          }
-          data={videoSeries}
-          renderItem={({ item }) => (
-            <VideoItem videoId={item} onPress={onVideoPress} />
-          )}
-          keyExtractor={(item) => item}
-        />
-      </View>
-      <Modal
-        visible={modalVisible}
-        transparent={true}
-        onRequestClose={closeModal}
-      >
-        <VideoModal videoId={selectedVideo} onClose={closeModal} />
-      </Modal>
-      <View style={{ flex: 3 }}>
-        <ScrollView>
-          <CreateCard
-            title="Push Up Techniques"
-            uri="https://www.byrdie.com/thmb/1lkMg3SyekOyxrnlfSEJGu0RtWc=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/pushupprimary-2ad793811a3a4ad3817e3632e5813698.jpg"
-            infoPage="https://www.byrdie.com/how-to-do-a-pushup-5091994"
-            paraData="Proper form is important in preventing injuries. Learn to perform a proper push up here!"
+    <View style={{ flex: 1, backgroundColor: "#F8FFF5" }}>
+      <SafeAreaView style={{ margin: 25, flex: 1 }}>
+        <View
+          style={{
+            flex: 1,
+            margin: 20,
+            borderColor: "black",
+            backgroundColor: "#DFFFCC",
+            paddingBottom: "10%",
+            borderRadius: 20,
+          }}
+        >
+          <FlatList
+            style={{ flex: 1 }}
+            contentContainerStyle={{ margin: 25 }}
+            ListHeaderComponent={
+              <>
+                <Text style={{ fontSize: 18, fontWeight: "bold" }}>
+                  Push Up Resources
+                </Text>
+              </>
+            }
+            data={videoSeries}
+            renderItem={({ item }) => (
+              <VideoItem videoId={item} onPress={onVideoPress} />
+            )}
+            keyExtractor={(item) => item}
           />
-          <CreateCard
-            title="Creating a training plan"
-            uri="https://images.unsplash.com/photo-1502904550040-7534597429ae?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8cnVubmluZyUyMHRyYWluaW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
-            infoPage="https://barbend.com/beginner-push-up-program/"
-            paraData="Training consistently is important to ensure that you can improve your push up count. Here are some ways to do so."
-          />
-        </ScrollView>
-      </View>
-    </SafeAreaView>
+        </View>
+        <Modal
+          visible={modalVisible}
+          transparent={true}
+          onRequestClose={closeModal}
+        >
+          <VideoModal videoId={selectedVideo} onClose={closeModal} />
+        </Modal>
+        <View style={{ flex: 3 }}>
+          <ScrollView>
+            <CreateCard
+              title="Push Up Techniques"
+              uri="https://www.byrdie.com/thmb/1lkMg3SyekOyxrnlfSEJGu0RtWc=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/pushupprimary-2ad793811a3a4ad3817e3632e5813698.jpg"
+              infoPage="https://www.byrdie.com/how-to-do-a-pushup-5091994"
+              paraData="Proper form is important in preventing injuries. Learn to perform a proper push up here!"
+            />
+            <CreateCard
+              title="Creating a training plan"
+              uri={
+                "https://images.unsplash.com/photo-1502904550040-7534597429ae?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8cnVubmluZyUyMHRyYWluaW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+              }
+              infoPage="https://barbend.com/beginner-push-up-program/"
+              paraData="Training consistently is important to ensure that you can improve your push up count. Here are some ways to do so."
+            />
+          </ScrollView>
+        </View>
+      </SafeAreaView>
+    </View>
   );
 };
 

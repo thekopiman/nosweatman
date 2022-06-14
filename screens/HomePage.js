@@ -12,10 +12,10 @@ function HomePage({ navigation }) {
   // }
   return (
     <View style={styles.overallContainer}>
-        <View style={styles.headerContainer}>
-          <Text style={styles.header}>Welcome back,</Text>
-          {/* Username goes here */}
-          <Text style={styles.header}>Admin!</Text>
+      <View style={styles.headerContainer}>
+        <Text style={styles.header}>Welcome back,</Text>
+        {/* Username goes here */}
+        <Text style={styles.header}>Admin!</Text>
       </View>
       <View style={styles.mainCompContainer}>
         <View style={styles.mainButtonContainer}>
@@ -73,7 +73,6 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingHorizontal: 15,
     paddingVertical: 5,
-
   },
   subButtonContainer: {
     flex: 0.6,
@@ -82,6 +81,6 @@ const styles = StyleSheet.create({
   },
   mainCompContainer: {
     flex: 2.8,
-    paddingBottom: "5%"
-  }
+    paddingBottom: "5%",
+  },
 });
