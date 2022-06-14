@@ -1,6 +1,6 @@
 import { View, Text, Pressable, StyleSheet, Image } from "react-native";
 
-function PrimaryButton({ textline, iconlink, pressHandler }) {
+function PrimaryButton({ textline, iconlink, pressHandler, backgroundColor }) {
   return (
     <View style={styles.buttonOuterContainer}>
       {/* pressed is a boolean and its name is fixed */}
@@ -9,8 +9,15 @@ function PrimaryButton({ textline, iconlink, pressHandler }) {
         // if false, then the single object will be applied
         style={({ pressed }) =>
           pressed
-            ? [styles.pressed, styles.buttonInnerContainer]
-            : styles.buttonInnerContainer
+            ? [
+                styles.pressed,
+                styles.buttonInnerContainer,
+                { backgroundColor: backgroundColor },
+              ]
+            : [
+                styles.buttonInnerContainer,
+                { backgroundColor: backgroundColor },
+              ]
         }
         onPress={pressHandler}
         android_ripple={{ color: "#ffada9" }}
@@ -40,7 +47,6 @@ const styles = StyleSheet.create({
   },
   // Main button style
   buttonInnerContainer: {
-    backgroundColor: "#A9FF74",
     paddingVertical: 8,
     paddingHorizontal: 16,
     flex: 1,

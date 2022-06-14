@@ -37,10 +37,10 @@ const styles = StyleSheet.create({
   },
   // Dedicated style for ios
   pressed: {
-    opacity: 0.75
+    opacity: 0.75,
   },
   buttonInnerContainer: {
-    backgroundColor: "#A9FF74",
+    backgroundColor: "#78B752",
     flex: 1,
     justifyContent: "center",
     borderRadius: 15,
