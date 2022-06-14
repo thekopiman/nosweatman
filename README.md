@@ -5,7 +5,7 @@ Health and IPPT related stuff for NS men.
 Demo App for **DSTA Brainhack 2022 CODE_EXP**\
 Cat-**01**-Team-**46**
 
-![Logo](https://github.com/thekopiman/nosweatman/blob/main/assets/Logo.png))
+![Logo](https://github.com/thekopiman/nosweatman/blob/main/assets/icon.png))
 
 # Login:
 
