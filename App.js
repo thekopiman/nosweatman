@@ -9,11 +9,11 @@ import MainContainer from "./components/MainContainer";
 import { useState } from "react";
 
 // UnComment these lines of code when finalising.
-// import { LogBox } from "react-native";
+import { LogBox } from "react-native";
 
-// LogBox.ignoreLogs([
-//   "Non-serializable values were found in the navigation state",
-// ]);
+LogBox.ignoreLogs([
+  "Non-serializable values were found in the navigation state. Check:",
+]);
 
 const Stack = createNativeStackNavigator();
 
